@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { ContainerComponent } from './components/container/container.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { ApartmentContainerComponent } from './apartment-container/apartment-container.component';
-import { ApartmentComponent } from './apartment/apartment.component';
-import { SectionComponent } from './section/section.component';
-import { VideosComponent } from './videos/videos.component';
-import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
+import { ApartmentContainerComponent } from './components/apartment-container/apartment-container.component';
+import { ApartmentComponent } from './components/apartment/apartment.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,6 @@ import { ContactComponent } from './contact/contact.component';
     BannerComponent,
     ApartmentContainerComponent,
     ApartmentComponent,
-    SectionComponent,
-    VideosComponent,
     FooterComponent,
     AboutComponent,
     HomeComponent,
@@ -30,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [ContainerComponent]
