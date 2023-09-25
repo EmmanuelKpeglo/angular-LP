@@ -12,6 +12,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { QuoteFormComponent } from './components/quote-form/quote-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EmailService } from './services/email.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,17 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    QuoteFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ EmailService ],
   bootstrap: [ContainerComponent]
 })
 export class AppModule { }
