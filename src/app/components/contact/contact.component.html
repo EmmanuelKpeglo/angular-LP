@@ -2,26 +2,30 @@
   <img src="../../../assets/images/contact.jpg" alt="">
 </div>
 
+<app-page-title [title]="title"></app-page-title>
 
 <div class="container my-5">
     <div class="row section">
         <div class="col">
-            <h1 class="display-4">Contact Us</h1>
-            <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label lead">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" formControlName="fullName">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="emailAddress" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="emailAddress" formControlName="emailAddress">
+                  </div>
+                  <div class="col mb-3">
+                    <label class="form-label">Comment</label>
+                    <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px" formControlName="comment"></textarea>
+                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label lead">Comment</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <!-- <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div> -->
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button class="btn btn-secondary mt-0" type="submit" [disabled]="!contactForm.valid">Send Message</button>
+              </div>
             </form>
         </div>
     </div>

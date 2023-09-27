@@ -10,6 +10,8 @@ import { EmailService } from 'src/app/services/email.service';
 })
 export class QuoteFormComponent {
 
+  title = 'Get a quote'
+
   constructor(private formBuilder: FormBuilder, private emailService: EmailService) { }
 
   quoteForm = this.formBuilder.group({
@@ -49,6 +51,8 @@ export class QuoteFormComponent {
   private getMessage(data: any) {
     const message = 
     `
+      ** Quote **
+
       ** Personal Information **
 
       Full Name: ${data.fullName}
