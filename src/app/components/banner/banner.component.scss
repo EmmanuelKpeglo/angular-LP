@@ -1,0 +1,25 @@
+.video-section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-section video {
+    width: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-section {
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-section {
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+    }
+}
