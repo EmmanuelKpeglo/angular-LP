@@ -1,3 +1,14 @@
-<app-banner></app-banner>
+<div class="hero">
+    <video autoplay [muted]="'muted'" loop>
+      <source src="../../assets/videos/vid1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-4">Welcome to Your Website</h1>
+      <p class="lead">Your captivating message goes here.</p>
+      <a routerLink="/quote" class="btn btn-secondary" style="border-radius: 25px;">Get a Quote</a>
+    </div>
+</div>
 <app-page-title [title]="title"></app-page-title>
 <app-apartment></app-apartment>
