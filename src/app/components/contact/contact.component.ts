@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { EmailService } from 'src/app/services/email.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -32,7 +33,13 @@ export class ContactComponent {
 
     this.emailService.SendEmail(data);
 
-    alert('Message has been sent!')
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Thank you...',
+      text: 'Your message was successfully submited'
+    })
+
     this.contactForm.reset();
 
   }

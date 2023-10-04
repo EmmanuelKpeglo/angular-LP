@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Quote } from 'src/app/models';
 import { EmailService } from 'src/app/services/email.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quote-form',
@@ -44,7 +45,15 @@ export class QuoteFormComponent {
 
     this.emailService.SendEmail(data);
 
-    alert('Message has been sent!')
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Thank you...',
+      html: `
+      <p>Your message was successfully submited</p>
+      <p>Kindly expect a message from us</p>`
+    })
+
     this.quoteForm.reset();
   }
 
