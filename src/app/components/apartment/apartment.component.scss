@@ -1,0 +1,40 @@
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        margin-bottom: 24px;
+    }
+}
+
+.image {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image img {
+    width: 400px;
+    border-radius: 8px;
+}
+  
+.margin-bottom {
+    margin-bottom: 80px;
+}
+
+
+@media (max-width: 768px) {
+    .text-position {
+        text-align: center;
+    }
+
+    .text-position:nth-child(1) {
+        order: 2;
+    }
+
+    .image {
+        margin-bottom: 30px;
+    }
+}

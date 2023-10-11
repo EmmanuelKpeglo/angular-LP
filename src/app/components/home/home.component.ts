@@ -14,6 +14,27 @@ export class HomeComponent implements AfterViewInit {
   constructor(private emailService: EmailService) { }
   
   ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.getPopUp();
+    }, 1500)
+    
+  }
+
+  private getMessage(data: any) {
+    const message = 
+    `
+      ** Contact **
+
+      Full Name: ${data.fullName}
+      Email Address: ${data.emailAddress}
+
+      Comment: ${data.comment}
+    `
+
+    return message;
+  }
+
+  private getPopUp() {
     Swal.fire({
       position: 'center',
       width: '400',
@@ -78,19 +99,4 @@ export class HomeComponent implements AfterViewInit {
       
     })
   }
-
-  private getMessage(data: any) {
-    const message = 
-    `
-      ** Contact **
-
-      Full Name: ${data.fullName}
-      Email Address: ${data.emailAddress}
-
-      Comment: ${data.comment}
-    `
-
-    return message;
-  }
-
 }
