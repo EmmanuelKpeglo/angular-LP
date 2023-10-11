@@ -1,7 +1,7 @@
 <app-banner [heroSource]="'../../../assets/images/contact.jpg'"></app-banner>
 <app-page-title [title]="title"></app-page-title>
 
-<div class="container my-5">
+<!-- <div class="container my-5">
     <div class="row section">
         <div class="col">
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
@@ -26,4 +26,36 @@
             </form>
         </div>
     </div>
+</div> -->
+
+<div class="container my-5">
+  <div class="row margin-bottom">
+      <div class="col-md-6 text-position" data-aos="fade-up" data-aos-duration="1000">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="container left-align">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" formControlName="fullName">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="emailAddress" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="emailAddress" formControlName="emailAddress">
+              </div>
+              <div class="col mb-3">
+                <label class="form-label">Comment</label>
+                <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px" formControlName="comment"></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary mt-0" type="submit" [disabled]="!contactForm.valid">Send Message</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+          <div class="image" data-aos="zoom-in" data-aos-duration="1000">
+              <img src="../../../assets/images/call.svg" alt="Your Image">
+          </div>
+      </div>
+  </div>
 </div>

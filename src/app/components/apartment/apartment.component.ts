@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-apartment',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./apartment.component.scss']
 })
 export class ApartmentComponent {
-
+  ngOnInit(): void {
+    Aos.init();
+  }
 }

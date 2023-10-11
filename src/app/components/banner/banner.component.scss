@@ -49,5 +49,23 @@
     cursor: pointer;
   }
   
-  /* Additional styles can be added as needed */
+  .bounce {
+    animation: bounce 1s linear infinite; /* Apply the animation to the element */
+  }
+
+  .bounce:hover {
+    animation: none;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateX(0); /* Start position */
+    }
+    50% {
+      transform: translateY(50px); /* Middle position */
+    }
+    100% {
+      transform: translateX(0); /* End position */
+    }
+  }
   

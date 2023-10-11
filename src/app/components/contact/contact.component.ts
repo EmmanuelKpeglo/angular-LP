@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-contact',
@@ -19,6 +20,10 @@ export class ContactComponent {
     emailAddress: [''],
     comment: ['']
   })
+
+  ngOnInit(): void {
+    Aos.init();
+  }
 
   onSubmit() {
 
