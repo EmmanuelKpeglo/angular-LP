@@ -40,6 +40,7 @@ export class HomeComponent implements AfterViewInit {
       width: '400',
       showCancelButton: true,
       confirmButtonText: 'send message',
+      confirmButtonColor: '#ff006a',
       backdrop: `
       rgba(11 11 11 / 83%)
       left top

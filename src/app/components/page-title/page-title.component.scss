@@ -1,0 +1,29 @@
+@use '../../theme/primary';
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.bar {
+    width: 48%;
+    height: 6px;
+    margin-top: 16px;
+    background-color: primary.$primary-color;
+    animation: slide 2s linear;
+}
+
+  @keyframes slide {
+    0% {
+        width: 100%;
+    }
+    50% {
+
+    }
+    100% {
+        width: 48%;
+    }
+  }

@@ -1,7 +1,10 @@
+@use '../../theme/primary';
+
 .section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-left: 1px solid primary.$primary-color;
 
     h1 {
         margin-bottom: 24px;
@@ -12,20 +15,36 @@
     text-align: center;
     width: 100%;
     overflow: hidden;
-    border-radius: 8px;
 }
 
 .image img {
-    width: 400px;
-    border-radius: 8px;
+    width: 100%;
+    border-radius: 4px;
 }
-  
-.margin-bottom {
-    margin-bottom: 80px;
+
+.text-position {
+    h1 {
+        margin-bottom: 48px;
+    }
+
+    p {
+        margin-bottom: 48px;
+    }
+}
+
+.jumbotron {
+    margin: 40px 0 80px 0;
+    padding: 48px;
+    border-radius: 4px;
+    background-color: rgba(133, 130, 130, 0.151);
 }
 
 
 @media (max-width: 768px) {
+    .section {
+        border-left: none;
+    }
+
     .text-position {
         text-align: center;
     }
@@ -36,5 +55,12 @@
 
     .image {
         margin-bottom: 30px;
+    }
+
+    .jumbotron {
+        margin: 32px 16px 80px 16px;
+        padding: 48px;
+        border-radius: 4px;
+        background-color: rgba(133, 130, 130, 0.151);
     }
 }
