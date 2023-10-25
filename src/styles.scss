@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use './app/theme/primary';
 @import "~bootstrap/dist/css/bootstrap.css";
+
 
 * {
     box-sizing: border-box;
@@ -10,10 +12,23 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lightgoldenrodyellow;
+    // background-color: lightgoldenrodyellow;
 }
 
 p {
     color: gray;
     line-height: 1.5;
+}
+
+.btn-theme {
+    background-color: primary.$primary-color;
+    color: white;
+}
+
+.btn-theme:hover {
+    border: 1px solid primary.$primary-color;;
+}
+
+.text-color {
+    color: primary.$primary-color;
 }

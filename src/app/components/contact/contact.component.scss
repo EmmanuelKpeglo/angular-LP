@@ -23,11 +23,18 @@
     text-align: left;
 }
 
+.text-position {
+    padding: 32px;
+    border: 1px solid rgba(128, 128, 128, 0.233);
+}
+
+
 
 
 @media (max-width: 768px) {
     .text-position {
         text-align: center;
+        border: none;
     }
 
     .text-position:nth-child(1) {

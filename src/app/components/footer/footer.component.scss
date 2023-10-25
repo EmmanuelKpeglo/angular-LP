@@ -1,5 +1,15 @@
+@use '../../theme/primary';
+
+.jumbotron {
+  margin: 40px 0 16px 0;
+  padding: 48px;
+  border-radius: 4px;
+  background-color: primary.$primary-color;
+  color: white;
+}
+
 #tempaltemo_footer a { color: #dcdde1;}
-#tempaltemo_footer a:hover { color: #68bb7d;}
+#tempaltemo_footer a:hover { color: primary.$primary-color;}
 #tempaltemo_footer ul.footer-link-list li { padding-top: 10px;}
 #tempaltemo_footer ul.footer-icons li {
   width: 2.6em;
@@ -15,3 +25,12 @@
   transition: .5s;
 }
 #tempaltemo_footer .border-light { border-color: #2d343f !important;}
+
+@media (max-width: 768px) {
+  .jumbotron {
+      margin: 32px 16px 16px 16px;
+      padding: 48px;
+      border-radius: 4px;
+      background-color: primary.$primary-color;
+  }
+}
