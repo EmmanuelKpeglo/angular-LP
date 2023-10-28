@@ -33,8 +33,11 @@
 
 @media (max-width: 768px) {
     .text-position {
+        margin: 0 4%;
+        padding: 16px 8px;
+        width: 92%;
         text-align: center;
-        border: none;
+
     }
 
     .text-position:nth-child(1) {

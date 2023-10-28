@@ -1,14 +1,23 @@
-<div class="hero">
+<div *ngIf="!isMobile" class="hero">
     <video autoplay [muted]="'muted'" loop>
       <source src="../../assets/videos/vid1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="display-4">Welcome to Your Website</h1>
-      <p class="lead">Your captivating message goes here.</p>
+      <h1 class="display-4">Welcome to Cole Dynamics</h1>
+      <!-- <p class="lead">Your captivating message goes here.</p> -->
       <a routerLink="/quote" class="btn btn-theme">Get a Quote</a>
     </div>
 </div>
+
+<app-banner *ngIf="isMobile" [heroSource]="'../../../assets/images/home.jpg'" [title]="'Welcome to Cole Dynamics'"></app-banner>
 <app-page-title [title]="title"></app-page-title>
 <app-apartment></app-apartment>
+
+<div *ngIf="isMobile">
+  <video autoplay [muted]="'muted'" loop>
+    <source src="../../assets/videos/vid1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>

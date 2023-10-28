@@ -7,4 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class BannerComponent {
   @Input() heroSource = '';
+  @Input() title = '';
+  @Input() page = '';
 }

@@ -8,10 +8,15 @@ import Swal from 'sweetalert2';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
   title = 'What are you looking for?';
+  isMobile: boolean = false;
 
   constructor(private emailService: EmailService) { }
+  
+  ngOnInit(): void {
+    this.isMobile = window.innerWidth <= 768; 
+  }
   
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -77,6 +82,10 @@ export class HomeComponent implements AfterViewInit {
         }
         return { fullName: fullName, emailAddress: emailAddress, comment: comment }
       },
+      inputValidator: (value) => {
+        if (!value) return 'Your text here'
+        else return null
+      }
     }).then((result) => {
 
       if(!result.dismiss) {

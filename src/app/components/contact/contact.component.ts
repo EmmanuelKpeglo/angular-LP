@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
 import * as Aos from 'aos';
@@ -16,8 +16,8 @@ export class ContactComponent {
   constructor(private formBuilder: FormBuilder, private emailService: EmailService) { };
 
   contactForm = this.formBuilder.group({
-    fullName: [''],
-    emailAddress: [''],
+    fullName: ['', Validators.required],
+    emailAddress: ['', Validators.required],
     comment: ['']
   })
 
@@ -27,26 +27,38 @@ export class ContactComponent {
 
   onSubmit() {
 
-    const formValue = this.contactForm.value;
+    if (this.contactForm.valid) {
+      const formValue = this.contactForm.value;
 
-    const data = {
-      from_name: formValue.fullName,
-      from_email: formValue.emailAddress,
-      to_name: 'ColeDynamics',
-      message: this.getMessage(formValue)
+      const data = {
+        from_name: formValue.fullName,
+        from_email: formValue.emailAddress,
+        to_name: 'ColeDynamics',
+        message: this.getMessage(formValue)
+      }
+  
+      this.emailService.SendEmail(data);
+  
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Thank you...',
+        text: 'Your message was successfully submited'
+      })
+  
+      this.contactForm.reset();
+    } else {
+      this.contactForm.markAllAsTouched();
     }
 
-    this.emailService.SendEmail(data);
+  }
 
-    Swal.fire({
-      position: 'top',
-      icon: 'success',
-      title: 'Thank you...',
-      text: 'Your message was successfully submited'
-    })
+  public getUserName() {
+    return this.contactForm.get('fullName');
+  }
 
-    this.contactForm.reset();
-
+  public getEmail() {
+    return this.contactForm.get('emailAddress');
   }
 
   private getMessage(data: any) {

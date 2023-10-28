@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Quote } from 'src/app/models';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
@@ -10,15 +10,16 @@ import Swal from 'sweetalert2';
   styleUrls: ['./quote-form.component.scss']
 })
 export class QuoteFormComponent {
+  agreed = false;
 
   title = 'Get a quote'
 
   constructor(private formBuilder: FormBuilder, private emailService: EmailService) { }
 
   quoteForm = this.formBuilder.group({
-    fullName: [''],
+    fullName: ['', Validators.required],
     emailAddress: [''],
-    phoneNumber: [''],
+    phoneNumber: ['', Validators.required],
     contactMethod: [''],
     propertyType: [''],
     location: [''],
@@ -29,32 +30,48 @@ export class QuoteFormComponent {
     financePreference: [''],
     specificPropertyRequirement: [''],
     timeframe: [''],
-    comment: ['']
+    comment: [''],
+    privacyPolicy: [''],
   })
 
   onSubmit() {
+    if (this.quoteForm.invalid) {
+      this.quoteForm.markAllAsTouched();
+    } else {
+      const formValue = this.quoteForm.value;
 
-    const formValue = this.quoteForm.value;
-
-    const data = {
-      from_name: formValue.fullName,
-      from_email: formValue.emailAddress,
-      to_name: 'ColeDynamics',
-      message: this.getMessage(formValue)
+      const data = {
+        from_name: formValue.fullName,
+        from_email: formValue.emailAddress,
+        to_name: 'ColeDynamics',
+        message: this.getMessage(formValue)
+      }
+  
+      this.emailService.SendEmail(data);
+  
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Thank you...',
+        html: `
+        <p>Your message was successfully submited</p>
+        <p>Kindly expect a message from us</p>`
+      })
+  
+      this.quoteForm.reset();
     }
+  }
 
-    this.emailService.SendEmail(data);
+  public getUserName() {
+    return this.quoteForm.get('fullName');
+  }
 
-    Swal.fire({
-      position: 'top',
-      icon: 'success',
-      title: 'Thank you...',
-      html: `
-      <p>Your message was successfully submited</p>
-      <p>Kindly expect a message from us</p>`
-    })
+  public getPhoneNumber() {
+    return this.quoteForm.get('phoneNumber');
+  }
 
-    this.quoteForm.reset();
+  public getAgreement() {
+    return this.quoteForm.get('privacyPolicy')?.valid;
   }
 
   private getMessage(data: any) {

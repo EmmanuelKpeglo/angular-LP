@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  opened = false;
 
+  public openNav() {
+    // document.getElementById("myNav").style.width = "100%";
+    this.opened = true;
+  }
+  
+  public closeNav() {
+    // document.getElementById("myNav").style.width = "0%";
+    this.opened = false;
+  }
 }
