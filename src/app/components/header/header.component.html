@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light static-top header">
   <div class="container">
-    <a class="navbar-brand text-center" routerLink="/home">
+    <a class="navbar-brand brand text-center" routerLink="/home">
       <img src="../../../assets/images/logo.jpeg" alt="..." height="36">
       <span>
         <a class="nav-link brand-name" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Cole Dynamics</a>
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -27,3 +27,15 @@
     </div>
   </div>
 </nav>
+
+<div id="myNav" class="overlay" [class.opened]="opened">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+    <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+    <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
+    <a routerLink="/gallery" routerLinkActive="active" ariaCurrentWhenActive="page">Gallery</a>
+  </div>
+</div>
+
+<span *ngIf="!opened" class="toggler" (click)="openNav()">&#9776;</span>

@@ -9,11 +9,11 @@
 
 
 .bar {
-    width: 48%;
+    width: 64px;
     height: 6px;
     margin-top: 16px;
     background-color: primary.$primary-color;
-    animation: slide 2s linear;
+    // animation: slide 2s linear;
 }
 
   @keyframes slide {
