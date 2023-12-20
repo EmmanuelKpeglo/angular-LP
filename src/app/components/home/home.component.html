@@ -7,7 +7,7 @@
     <div class="hero-content">
       <h1 class="display-4">Welcome to Cole Dynamics</h1>
       <!-- <p class="lead">Your captivating message goes here.</p> -->
-      <a routerLink="/quote" class="btn btn-theme">Get a Quote</a>
+      <a routerLink="/quote" class="btn btn-theme" data-aos="flip-up" data-aos-duration="800">Get a Quote</a>
     </div>
 </div>
 
@@ -16,7 +16,7 @@
 <app-apartment></app-apartment>
 
 <div *ngIf="isMobile">
-  <video autoplay [muted]="'muted'" loop>
+  <video [muted]="'muted'" controls style="background-color: rgba(0, 0, 0, 0.521);">
     <source src="../../assets/videos/vid1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>

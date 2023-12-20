@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
   constructor(private emailService: EmailService) { }
   
   ngOnInit(): void {
-    this.isMobile = window.innerWidth <= 768; 
+    this.isMobile = window.innerWidth <= 768;
+    Aos.init(); 
   }
   
   ngAfterViewInit(): void {
