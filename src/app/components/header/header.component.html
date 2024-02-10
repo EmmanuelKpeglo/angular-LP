@@ -31,10 +31,10 @@
 <div id="myNav" class="overlay" [class.opened]="opened">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
   <div class="overlay-content">
-    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-    <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
-    <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
-    <a routerLink="/gallery" routerLinkActive="active" ariaCurrentWhenActive="page">Gallery</a>
+    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeNav()">Home</a>
+    <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeNav()">About</a>
+    <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeNav()">Contact</a>
+    <a routerLink="/gallery" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeNav()">Gallery</a>
   </div>
 </div>
 

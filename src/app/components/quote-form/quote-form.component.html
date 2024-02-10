@@ -1,4 +1,4 @@
-<app-banner [heroSource]="'../../../assets/images/quote.jpg'" [title]="'Fill out the form'" [page]="'quote'"></app-banner>
+<app-banner [heroSource]="'../../../assets/images/quote.jpg'" [title]="'Kindly fill out the form below'" [page]="'quote'"></app-banner>
 
 <app-page-title [title]="title"></app-page-title>
 
@@ -153,6 +153,19 @@
                                     <div class="col-md-12 mb-4">
                                         <label class="form-label">Additional Comments</label>
                                         <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px" formControlName="comment"></textarea>
+                                    </div>
+
+                                    <div class="disclaimer">
+                                        <div class="jumbotron">
+                                            <h5>Disclaimer</h5>
+                                            <p>
+                                                At Cole Dynamics, we prioritize your trust and privacy. We're a reputable, 
+                                                licensed brokerage with transparent operations. Rest assured, we never request 
+                                                upfront payments for property quotations. Your information is safe with us, and 
+                                                after you've filled the form above, one of our agents will contact you promptly.
+                                            </p>
+                                            <a routerLink="/about" class="btn btn-theme">Learn More</a>
+                                        </div>
                                     </div>
 
                                 </div>
