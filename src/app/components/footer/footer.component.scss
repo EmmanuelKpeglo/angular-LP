@@ -26,6 +26,15 @@
 }
 #tempaltemo_footer .border-light { border-color: #2d343f !important;}
 
+.footer-logo {
+  display: flex;
+}
+
+.footer-logo p {
+  color: white;
+  margin-left: 8px;
+}
+
 @media (max-width: 768px) {
   .jumbotron {
       margin: 32px 16px 16px 16px;
