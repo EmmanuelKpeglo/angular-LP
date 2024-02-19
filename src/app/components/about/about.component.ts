@@ -7,7 +7,7 @@ import * as Aos from 'aos';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  title = 'Things to know about Cole Dynamics'
+  title = 'Things to know about ZoroLuf'
 
   ngOnInit(): void {
     Aos.init();

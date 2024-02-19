@@ -94,7 +94,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         const data = {
           from_name: result.value.fullName,
           from_email: result.value.emailAddress,
-          to_name: 'ColeDynamics',
+          to_name: 'ZoroLuf',
           message: this.getMessage(result.value)
         }
     

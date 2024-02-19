@@ -33,7 +33,7 @@ export class ContactComponent {
       const data = {
         from_name: formValue.fullName,
         from_email: formValue.emailAddress,
-        to_name: 'ColeDynamics',
+        to_name: 'ZoroLuf',
         message: this.getMessage(formValue)
       }
   
